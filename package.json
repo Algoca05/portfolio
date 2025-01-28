@@ -4,7 +4,8 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "production": "npm run build"
+        "production": "npm run build",
+        "prebuild": "apt-get update && apt-get install -y libssl1.0.0"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
