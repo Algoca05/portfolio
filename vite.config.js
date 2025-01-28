@@ -4,12 +4,13 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
+    manifest: true,
+    outDir: 'public/dist',
     rollupOptions: {
-      input: {
-        main: './resources/js/app.js',  // Asegúrate de que esta ruta sea correcta
-      },
+      input: './resources/js/app.js',
     },
   },
+  publicDir: 'resources/static', // Cambia esto a un directorio separado
   esbuild: {
     loader: 'jsx',
     include: [
