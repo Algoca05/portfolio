@@ -46,11 +46,10 @@ return [
             'lock_table' => env('DB_CACHE_LOCK_TABLE'),
         ],
 
-        'file' => [
-            'driver' => 'file',
-            'path' => storage_path('framework/cache/data'),
-            'lock_path' => storage_path('framework/cache/data'),
-        ],
+      'file' => [
+        'driver' => 'file',
+        'path' => env('CACHE_PATH', '/tmp/cache'),
+    ],
 
         'memcached' => [
             'driver' => 'memcached',
