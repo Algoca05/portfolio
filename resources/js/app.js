@@ -5,6 +5,9 @@
  */
 
 import './bootstrap';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -13,6 +16,8 @@ import './bootstrap';
  */
 
 import './components/Example';
+
+ReactDOM.render(<App />, document.getElementById('example'));
 
 require('./bootstrap');
 require('./components/ExampleComponent')

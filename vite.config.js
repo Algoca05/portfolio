@@ -7,7 +7,10 @@ export default defineConfig({
     manifest: true,
     outDir: 'public/dist',
     rollupOptions: {
-      input: './resources/js/app.js',
+      input: [
+        './resources/js/app.js',
+        './resources/css/app.css'
+      ],
     },
   },
   publicDir: 'resources/static', // Cambia esto a un directorio separado

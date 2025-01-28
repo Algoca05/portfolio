@@ -1,5 +1,1 @@
-const mix = require('laravel-mix');
-
-mix.js('resources/js/app.js', 'public/js')
-   .react()
-   .sass('resources/sass/app.scss', 'public/css');
+// This file is no longer needed and can be removed.
