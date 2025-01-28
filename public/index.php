@@ -5,7 +5,11 @@ use Illuminate\Http\Request;
 define('LARAVEL_START', microtime(true));
 
 // Ensure the database file exists
-if (!file_exists($databasePath = env('DB_DATABASE'))) {
+$databasePath = env('DB_DATABASE');
+if (!file_exists($databasePath)) {
+    if (!is_dir(dirname($databasePath))) {
+        mkdir(dirname($databasePath), 0755, true);
+    }
     touch($databasePath);
 }
 
