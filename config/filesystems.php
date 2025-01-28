@@ -31,9 +31,9 @@ return [
     'disks' => [
 
         'local' => [
-        'driver' => 'local',
-        'root' => env('FILESYSTEM_DRIVER', '/tmp'),
-    ],
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
 
         'public' => [
             'driver' => 'local',
