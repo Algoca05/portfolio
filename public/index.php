@@ -12,14 +12,16 @@ $dotenv->load();
 
 // Ensure the database file exists and has the correct permissions
 $databasePath = env('DB_DATABASE');
-if (!file_exists($databasePath)) {
-    if (!is_dir(dirname($databasePath))) {
-        mkdir(dirname($databasePath), 0755, true);
+$tmpDatabasePath = '/tmp/' . basename($databasePath);
+
+if (!file_exists($tmpDatabasePath)) {
+    if (!is_dir(dirname($tmpDatabasePath))) {
+        mkdir(dirname($tmpDatabasePath), 0755, true);
     }
-    touch($databasePath);
-    chmod($databasePath, 0666);
+    touch($tmpDatabasePath);
+    chmod($tmpDatabasePath, 0666);
 } else {
-    chmod($databasePath, 0666);
+    chmod($tmpDatabasePath, 0666);
 }
 
 // Determine if the application is in maintenance mode...

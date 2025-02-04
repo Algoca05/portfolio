@@ -11,7 +11,6 @@
         "laravel/tinker": "^2.9",
         "laravel/ui": "^4.6",
         "ext-openssl": "*"
-
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

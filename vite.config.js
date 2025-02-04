@@ -7,23 +7,16 @@ export default defineConfig({
     manifest: true,
     outDir: 'public/dist',
     rollupOptions: {
-      input: './resources/js/app.js',
+      input: './resources/js/app.jsx',
     },
   },
-  publicDir: 'resources/static', // Cambia esto a un directorio separado
+  publicDir: 'resources/static',
   esbuild: {
-    loader: 'jsx',
-    include: [
-      'resources/js/**/*.jsx',
-      'resources/js/**/*.js',
-    ],
-    exclude: [],
+    loader: 'jsx', // Cambia esto a una cadena
   },
   optimizeDeps: {
     esbuildOptions: {
-      loader: {
-        '.js': 'jsx',
-      },
+      loader: 'jsx', // Cambia esto a una cadena
     },
   },
 });
